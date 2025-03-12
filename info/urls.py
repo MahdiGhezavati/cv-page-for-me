@@ -3,5 +3,5 @@ from info.views import *
 
 app_name = "information"
 urlpatterns = [
-    path("",info , name="information"),
+    path("", info_page , name="information"),
 ]
