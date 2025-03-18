@@ -1,45 +1,22 @@
+
+{% extends 'base.html' %}
 {% load static %}
+{% block body %}
 
-
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>info MAHDI GHEZAVATI</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="{% static 'css/kube.min.css' %}" />
-	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
-	<link rel="stylesheet" href="{% static 'css/custom.min.css' %}" />
-	<link rel="shortcut icon" href="{%static 'img/mahdiicon.png' %}" />
-	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-	<style>
-		.intro h1:before {
-			/* Edit this with your name or anything else */
-			content: 'MAHDI';
-		}
-	</style>
-
-</head>
-
-<body>
 	<!-- Navigation -->
 	<div class="main-nav">
 		<div class="container">
 			<header class="group top-nav">
 				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
-					<span class="logo">MAHDI</span>
+					<span class="logo">{{name}}</span>
 				</div>
 				<nav id="navbar-1" class="navbar item-nav">
 					<ul>
 						<li class="active"><a href="#about">About</a></li>
 						<li><a href="#skills">Skills</a></li>
 						<li><a href="#experiences">Projects</a></li>
-						<li><a href="#Abilities&Education">Abilities and Education</a></li>
-						<li><a href="#achievements">Contact</a></li>
+						<li><a href="#AbilitiesEducation">Abilities and Education</a></li>
+						<li><a href="{% url 'contact:contact'%}">Contact</a></li>
 
 					</ul>
 				</nav>
@@ -50,7 +27,7 @@
 	<!-- Introduction -->
 	<div class="intro section" id="about">
 		<div class="container">
-			<p>Hi, I’m MAHDI GHEZAVATI </p>
+			<p>Hi, I’m {{fullname}} </p>
 			<div class="units-row units-split wrap">
 				<div class="unit-20">
 					<img src="{% static 'img/mahdi.jpg'%}" alt="Avatar">
@@ -61,10 +38,12 @@
 				<br><br>
 				<h2><strong>&horbar; a bit about me</strong></h2>
 				<p>Hello , Wellcome to my page <br>
-					My name is <strong>MAHDI</strong> . actually iam a <strong>Designer</strong>(to be honest a
+					My name is <strong>{{name}}</strong> . actually iam a <strong>Designer</strong>(to be honest a
 					novice)<br>
 					MY favorit language is <strong>PYTHON</strong> <br> very very interested in website design
 					,especially <strong>Back-end</strong><br> and i am a great a <strong>Gamer</strong>(no joke)!
+					<h5>&FilledVerySmallSquare; spoken language</h5>
+					Maybe i should add that English is the second language that i know and i have some fluency 
 				</p>
 			</div>
 		</div>
@@ -76,15 +55,15 @@
 			<h1>Technical<br>Skills</h1>
 			<ul class="skill-list list-flat">
 				<li>Languages</li>
-				<li>HTML / CSS / PYTHON </li>
+				<li>{{Languages}}</li>
 			</ul>
 			<ul class="skill-list list-flat">
 				<li>Database</li>
-				<li>MySQL </li>
+				<li>{{Database}} </li>
 			</ul>
 			<ul class="skill-list list-flat">
 				<li>Framework</li>
-				<li> DJANGO </li>
+				<li> {{webframework}} </li>
 			</ul>
 		</div>
 	</div>
@@ -128,7 +107,7 @@
 
 
 	<!-- Abilities and Education -->
-	<div class="award section second" id="Abilities&Education">
+	<div class="award section second" id="AbilitiesEducation">
 		<div class="container">
 			<h1>Abilities and &amp;<br> Education</h1>
 			<ul class="award-list list-flat">
@@ -165,53 +144,12 @@
 			<h1>Conversation&amp;<br>communication</h1>
 			<ul class="award-list list-flat">
 				<li>Ways of communication</li>
-				<li>&#9998; in Telegram with ID :<strong> @IMEHDIWI</strong> </li>
-				<li>&#9998; in X with ID :<strong> @Meyishonam</strong></li>
+				<li>&#9998; in Telegram with ID :<strong>{{telegramID}} </strong> </li>
+				<li>&#9998; in X with ID :<strong>{{xID}} </strong></li>
 				<li>&#9998; in Github with this link :<strong> <a
-							href="https://github.com/MahdiGhezavati">MahdiGhezavati.Github</a></strong></li>
+							href="{{link_github}}">MahdiGhezavati.Github</a></strong></li>
 			</ul>
 		</div>
 	</div>
 
-
-	<!-- Quote -->
-	<div class="quote">
-		<div class="container text-centered">
-			<h1>To combat criticism about tattoos.</h1>
-		</div>
-	</div>
-
-	<footer>
-		<div class="container">
-			<div class="units-row">
-				<div class="unit-50">
-					<p>Connection with MAHDI</p>
-				</div>
-				<div class="unit-50">
-					<ul class="social list-flat right">
-						<li><a href="https://t.me/IMehtiwI"><i class="fa fa-send"></i></a></li>
-						<li><a href="https://x.com/Meyishonam?s=09"><i class="fa fa-twitter"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-	<!-- Javascript -->
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-	<script src="{% static 'js/typed.min.js' %}"></script>
-	<script src="{% static 'js/kube.min.js' %}"></script>
-	<script src="{% static 'js/site.js' %}"></script>
-	<script>
-		function newTyped() { } $(function () {
-			$("#typed").typed({
-				// Change to edit type effect
-				strings: ["iran", "Gorgan", "everywhere"],
-
-				typeSpeed: 90, backDelay: 700, contentType: "html", loop: !0, resetCallback: function () { newTyped() }
-			}), $(".reset").click(function () { $("#typed").typed("reset") })
-		});
-	</script>
-</body>
-
-</html>
+{% endblock %}

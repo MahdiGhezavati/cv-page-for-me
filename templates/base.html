@@ -1,0 +1,76 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>info {{fullname}} </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="{% static 'css/kube.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/custom.min.css' %}" />
+	<link rel="shortcut icon" href="{%static 'img/mahdiicon.png' %}" />
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<style>
+		.intro h1:before {
+			/* Edit this with your name or anything else */
+			content: "{{name}}";
+		}
+	</style>
+
+</head>
+
+<body>
+
+    {% block body %}
+
+
+    {% endblock%}
+
+    	<!-- Quote -->
+	<div class="quote">
+		<div class="container text-centered">
+			<h1>To combat criticism about tattoos.</h1>
+		</div>
+	</div>
+
+    <footer>
+		<div class="container">
+			<div class="units-row">
+				<div class="unit-50">
+					<p>Connection with MAHDI</p>
+				</div>
+				<div class="unit-50">
+					<ul class="social list-flat right">
+						<li><a href="{{link_telegram}}"><i class="fa fa-send"></i></a></li>
+						<li><a href="{{link_x}}"><i class="fa fa-twitter"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Javascript -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/typed.min.js' %}"></script>
+	<script src="{% static 'js/kube.min.js' %}"></script>
+	<script src="{% static 'js/site.js' %}"></script>
+	<script>
+		function newTyped() { } $(function () {
+			$("#typed").typed({
+				// Change to edit type effect
+				strings: ["{{living_01}}", "{{living_02}}", "{{living_03}}"],
+
+				typeSpeed: 90, backDelay: 700, contentType: "html", loop: !0, resetCallback: function () { newTyped() }
+			}), $(".reset").click(function () { $("#typed").typed("reset") })
+		});
+	</script>
+</body>
+
+
+</html>
